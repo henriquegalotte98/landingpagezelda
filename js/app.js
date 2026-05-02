@@ -54,10 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Tocando áudio de introdução...");
             play('audiointro');
             
-            // Aguarda o som terminar (aproximadamente 1 segundo) ou redireciona imediatamente
+            // Aguarda o som terminar (aproximadamente meio segundo) e redireciona
             setTimeout(function() {
-                window.location.href = startButton.getAttribute('href');
-            }, 500); // 500ms = meio segundo de delay
+                const destination = startButton.getAttribute('href') || './pages/home.html';
+                window.location.href = destination;
+            }, 500); 
         });
     }
     
